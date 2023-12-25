@@ -45,6 +45,9 @@ const FeedbackForm = () => {
             } else {
                 addFeedback(newFeedback);
             }
+            // NOTE: reset to default state after submission
+            setBtnDisabled(true); //reset disabled
+            setRating(10); //set rating back to 10
             setText('');
         }
     };
