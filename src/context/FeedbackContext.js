@@ -2,15 +2,15 @@ import {createContext, useState, useEffect} from 'react';
 
 const FeedbackContext = createContext();
 
-const isDevelopment = process.env.NODE_ENV === 'development';
-
-let API_URL = '';
-
-if (isDevelopment) {
-    API_URL = 'http://localhost:5000';
-} else {
-    API_URL = 'https://react-feedback-app.onrender.com';
-}
+// const isDevelopment = process.env.NODE_ENV === 'development';
+//
+// let API_URL = '';
+//
+// if (isDevelopment) {
+//     API_URL = 'http://localhost:5000';
+// } else {
+//     API_URL = 'https://react-feedback-app.onrender.com';
+// }
 
 export const FeedbackProvider = ({children}) => {
     const [isLoading, setIsLoading] = useState(true);
