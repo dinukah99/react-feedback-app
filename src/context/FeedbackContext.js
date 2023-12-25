@@ -2,18 +2,6 @@ import {createContext, useState, useEffect} from 'react';
 
 const FeedbackContext = createContext();
 
-// const isDevelopment = process.env.NODE_ENV === 'development';
-//
-// let API_URL = '';
-//
-// if (isDevelopment) {
-//     API_URL = 'http://localhost:5000';
-// } else {
-//     API_URL = 'https://react-feedback-app.onrender.com';
-// }
-
-const API_URL = 'http://localhost:5000';
-
 export const FeedbackProvider = ({children}) => {
     const [isLoading, setIsLoading] = useState(true);
     const [feedback, setFeedback] = useState([]);
@@ -28,7 +16,7 @@ export const FeedbackProvider = ({children}) => {
 
     //Fetch feedback
     const fetchFeedback = async () => {
-        const response = await fetch(`${API_URL}/feedback?_sort=id&_order=desc`);
+        const response = await fetch(`/feedback?_sort=id&_order=desc`);
         const data = await response.json();
         setFeedback(data);
         setIsLoading(false);
@@ -36,7 +24,7 @@ export const FeedbackProvider = ({children}) => {
 
     //Add feedback
     const addFeedback = async (newFeedback) => {
-        const response = await fetch(`${API_URL}/feedback`, {
+        const response = await fetch(`}/feedback`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -51,14 +39,14 @@ export const FeedbackProvider = ({children}) => {
     //Delete feedback
     const deleteFeedback = async (id) => {
         if (window.confirm('Are you sure you want to delete this feedback?')) {
-            await fetch(`${API_URL}/feedback/${id}`, {method: 'DELETE'});
+            await fetch(`/feedback/${id}`, {method: 'DELETE'});
             setFeedback(feedback.filter((item) => item.id !== id));
         }
     };
 
     //Update feedback item
     const updateFeedback = async (id, updItem) => {
-        const response = await fetch(`${API_URL}/feedback/${id}`, {
+        const response = await fetch(`/feedback/${id}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json'
