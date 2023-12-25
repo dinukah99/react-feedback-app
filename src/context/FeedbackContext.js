@@ -12,6 +12,8 @@ const FeedbackContext = createContext();
 //     API_URL = 'https://react-feedback-app.onrender.com';
 // }
 
+const API_URL = 'http://localhost:5000';
+
 export const FeedbackProvider = ({children}) => {
     const [isLoading, setIsLoading] = useState(true);
     const [feedback, setFeedback] = useState([]);
