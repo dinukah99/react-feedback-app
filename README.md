@@ -2,6 +2,8 @@
 
 Feedback app project from Traversy Media React Front To Back course. This app allows users to add, update and delete feedback. It uses a mock REST api with json-server.
 
+https://dinukah99-react-feedback.netlify.app
+
 It covers some fundamentals of React including,
 
 - Components
