@@ -2,7 +2,6 @@ import {createContext, useState, useEffect} from 'react';
 
 const FeedbackContext = createContext();
 
-
 const isDevelopment = process.env.NODE_ENV === 'development';
 let API_URL = '';
 
@@ -11,7 +10,6 @@ if (isDevelopment) {
 } else {
     API_URL = 'https://dinukah99-react-feedback.netlify.app';
 }
-
 
 export const FeedbackProvider = ({children}) => {
     const [isLoading, setIsLoading] = useState(true);
