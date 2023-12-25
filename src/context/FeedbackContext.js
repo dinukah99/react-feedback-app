@@ -8,7 +8,7 @@ let API_URL = '';
 if (isDevelopment) {
     API_URL = 'http://localhost:5000';
 } else {
-    API_URL = 'https://dinukah99-react-feedback.netlify.app';
+    API_URL = 'https://react-feedback-app.onrender.com';
 }
 
 export const FeedbackProvider = ({children}) => {
